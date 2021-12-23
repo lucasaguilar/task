@@ -1,0 +1,67 @@
+<app-header titulo="My task app"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!--ion-list>
+    <app-message *ngFor="let message of getMessages()" [message]="message"></app-message>
+  </ion-list-->
+
+  <ion-list>
+    <ion-item (click)="registrarEvento()" detail="true">
+      <ion-icon
+        slot="start"
+        name="clipboard-outline"
+        color="primary"
+      ></ion-icon>
+      Registrar tarea/evento
+    </ion-item>
+
+    <ion-item (click)="listarEventos()" detail="true">
+      <ion-icon slot="start" name="list-outline" color="primary"></ion-icon>
+      Listar eventos
+    </ion-item>
+
+    <ion-item
+      [routerLink]="['/about']"
+      routerLinkActive="router-link-active"
+      detail
+    >
+      <ion-icon
+        slot="start"
+        name="people-circle-outline"
+        color="primary"
+      ></ion-icon>
+      Acerca de My Task...
+    </ion-item>
+
+    <ion-item
+      [routerLink]="['/user-profile']"
+      routerLinkActive="router-link-active"
+      detail
+    >
+      <ion-icon slot="start" name="person-outline" color="primary"></ion-icon>
+      User profile
+    </ion-item>
+
+    <ion-item (click)="logout()">
+      <ion-icon slot="start" name="log-out-outline" color="primary"></ion-icon>
+      Salir
+    </ion-item>
+
+    <ion-item
+      [routerLink]="['/action-sheet']"
+      routerLinkActive="router-link-active"
+    >
+      <ion-icon name="pizza" slot="start"></ion-icon>
+      <ion-label>ion-action-sheet</ion-label>
+    </ion-item>
+
+    <ion-item [routerLink]="['/alert']" routerLinkActive="router-link-active">
+      <ion-icon name="door" slot="start"></ion-icon>
+      <ion-label>alert</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

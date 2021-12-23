@@ -1,0 +1,15 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "my-tasks",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"plugins": {
+		"GoogleAuth": {
+			"scopes": [
+				"profile",
+				"email"
+			],
+			"serverClientId": "#####completaraca###"
+		}
+	}
+}

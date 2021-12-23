@@ -1,0 +1,18 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "my-tasks",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"plugins": {
+		"GoogleAuth": {
+			"scopes": [
+				"profile",
+				"email"
+			],
+			"serverClientId": "####.apps.googleusercontent.com"
+		}
+	},
+	"server": {
+		"url": "http://192.168.0.125:8100"
+	}
+}

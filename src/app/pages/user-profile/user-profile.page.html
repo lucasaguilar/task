@@ -1,0 +1,37 @@
+<app-header titulo="Acerca de My Task..."></app-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="user !== null;then imageProfile else imageBlank"></div>
+  <ng-template #imageProfile>
+    <ion-list>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <ion-img
+            *ngIf="user.profileUserJwt !== null"
+            src="{{ user.profileUserJwt.imageUrl }}"
+          ></ion-img>
+        </ion-thumbnail>
+        <ion-label *ngIf="user.profileUserJwt !== null"
+          >{{ user.profileUserJwt.email }}</ion-label
+        >
+      </ion-item>
+    </ion-list>
+  </ng-template>
+
+  <ng-template #imageBlank> </ng-template>
+
+  <ion-card>
+    <ion-card-header>
+      <!--  <ion-card-subtitle>{{ user.profileUserJwt.email }}</ion-card-subtitle>
+      -->
+      <ion-card-title *ngIf="user.profileUserJwt !== null"
+        >{{ user.profileUserJwt.displayName }}</ion-card-title
+      >
+    </ion-card-header>
+
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile, and
+      climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+</ion-content>
